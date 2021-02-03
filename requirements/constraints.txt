@@ -16,5 +16,8 @@ pylint==1.9.3
 pycodestyle==2.5.0
 
 # Keep same platform version
-azure-storage==v0.20.3
-django-storages==1.4.1
+cryptography==2.9.2
+django-storages==1.8.0
+importlib-metadata==1.6.0
+importlib-resources==3.2.1
+tox==3.15.0

@@ -5,40 +5,58 @@
 #    make upgrade
 #
 azure-common==1.1.26
-    # via azure-storage
+    # via
+    #   azure-storage-blob
+    #   azure-storage-common
 azure-nspkg==3.0.2
     # via
     #   azure-common
-    #   azure-storage
-azure-storage==v0.20.3
-    # via
-    #   -c requirements/constraints.txt
-    #   -r requirements/base.in
+    #   azure-storage-nspkg
+azure-storage-blob==2.1.0
+    # via -r requirements/base.in
+azure-storage-common==2.1.0
+    # via azure-storage-blob
+azure-storage-nspkg==3.1.0
+    # via azure-storage-common
 certifi==2020.12.5
     # via requests
+cffi==1.14.4
+    # via cryptography
 chardet==4.0.0
     # via requests
-django-storages==1.4.1
+cryptography==2.9.2
+    # via
+    #   -c requirements/constraints.txt
+    #   azure-storage-common
+django-storages==1.8.0
     # via
     #   -c requirements/constraints.txt
     #   -r requirements/base.in
 django==1.11.29
-    # via -r requirements/base.in
+    # via
+    #   -r requirements/base.in
+    #   django-storages
+enum34==1.1.10
+    # via cryptography
 futures==3.3.0 ; python_version == "2.7"
     # via
     #   -c requirements/constraints.txt
-    #   azure-storage
+    #   azure-storage-blob
 idna==2.10
     # via requests
+ipaddress==1.0.23
+    # via cryptography
+pycparser==2.20
+    # via cffi
 python-dateutil==2.8.1
-    # via azure-storage
-pytz==2020.5
-    # via
-    #   -r requirements/base.in
-    #   django
+    # via azure-storage-common
+pytz==2021.1
+    # via django
 requests==2.25.1
-    # via azure-storage
+    # via azure-storage-common
 six==1.15.0
-    # via python-dateutil
-urllib3==1.26.2
+    # via
+    #   cryptography
+    #   python-dateutil
+urllib3==1.26.3
     # via requests

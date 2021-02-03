@@ -36,7 +36,7 @@ setup(
         'eox_azure'
     ],
     include_package_data=True,
-    install_requires=['azure-storage==v0.20.3'],
+    install_requires=['azure-storage-blob>=1.3.1,<12.0.0'],
     zip_safe=False,
     entry_points={
         "lms.djangoapp": [

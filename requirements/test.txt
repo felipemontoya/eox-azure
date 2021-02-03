@@ -9,16 +9,23 @@ astroid==1.6.6
 azure-common==1.1.26
     # via
     #   -r requirements/base.txt
-    #   azure-storage
+    #   azure-storage-blob
+    #   azure-storage-common
 azure-nspkg==3.0.2
     # via
     #   -r requirements/base.txt
     #   azure-common
-    #   azure-storage
-azure-storage==v0.20.3
+    #   azure-storage-nspkg
+azure-storage-blob==2.1.0
+    # via -r requirements/base.txt
+azure-storage-common==2.1.0
     # via
-    #   -c requirements/constraints.txt
     #   -r requirements/base.txt
+    #   azure-storage-blob
+azure-storage-nspkg==3.1.0
+    # via
+    #   -r requirements/base.txt
+    #   azure-storage-common
 backports.functools-lru-cache==1.6.1
     # via
     #   astroid
@@ -28,33 +35,51 @@ certifi==2020.12.5
     # via
     #   -r requirements/base.txt
     #   requests
+cffi==1.14.4
+    # via
+    #   -r requirements/base.txt
+    #   cryptography
 chardet==4.0.0
     # via
     #   -r requirements/base.txt
     #   requests
 configparser==4.0.2
     # via pylint
-coverage==5.3.1
+coverage==5.4
     # via -r requirements/test.in
-django-storages==1.4.1
+cryptography==2.9.2
     # via
     #   -c requirements/constraints.txt
     #   -r requirements/base.txt
-    # via -r requirements/base.txt
+    #   azure-storage-common
+django-storages==1.8.0
+    # via
+    #   -c requirements/constraints.txt
+    #   -r requirements/base.txt
+    # via
+    #   -r requirements/base.txt
+    #   django-storages
 enum34==1.1.10
-    # via astroid
+    # via
+    #   -r requirements/base.txt
+    #   astroid
+    #   cryptography
 funcsigs==1.0.2
     # via mock
 futures==3.3.0 ; python_version == "2.7"
     # via
     #   -c requirements/constraints.txt
     #   -r requirements/base.txt
-    #   azure-storage
+    #   azure-storage-blob
     #   isort
 idna==2.10
     # via
     #   -r requirements/base.txt
     #   requests
+ipaddress==1.0.23
+    # via
+    #   -r requirements/base.txt
+    #   cryptography
 isort==4.3.21
     # via pylint
 lazy-object-proxy==1.5.2
@@ -67,6 +92,10 @@ pycodestyle==2.5.0
     # via
     #   -c requirements/constraints.txt
     #   -r requirements/test.in
+pycparser==2.20
+    # via
+    #   -r requirements/base.txt
+    #   cffi
 pylint==1.9.3
     # via
     #   -c requirements/constraints.txt
@@ -74,15 +103,15 @@ pylint==1.9.3
 python-dateutil==2.8.1
     # via
     #   -r requirements/base.txt
-    #   azure-storage
-pytz==2020.5
+    #   azure-storage-common
+pytz==2021.1
     # via
     #   -r requirements/base.txt
     #   django
 requests==2.25.1
     # via
     #   -r requirements/base.txt
-    #   azure-storage
+    #   azure-storage-common
 singledispatch==3.4.0.3
     # via
     #   astroid
@@ -91,13 +120,14 @@ six==1.15.0
     # via
     #   -r requirements/base.txt
     #   astroid
+    #   cryptography
     #   mock
     #   pylint
     #   python-dateutil
     #   singledispatch
 testfixtures==6.17.1
     # via -r requirements/test.in
-urllib3==1.26.2
+urllib3==1.26.3
     # via
     #   -r requirements/base.txt
     #   requests
