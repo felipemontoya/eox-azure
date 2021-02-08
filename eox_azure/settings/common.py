@@ -52,6 +52,8 @@ def plugin_settings(settings):
         None
     )
 
+    settings.AZURE_OVERWRITE_FILES = True
+
     if settings.AZURE_ACCOUNT_NAME and settings.AZURE_ACCOUNT_KEY and settings.AZURE_CONTAINER:
         settings.DEFAULT_FILE_STORAGE = 'eox_azure.storage.AzureStorageExtended'
         settings.ORA2_FILEUPLOAD_BACKEND = "django"
